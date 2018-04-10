@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-4-vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="jscode.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!--    <link rel="stylesheet" href="Calculator.ttf">-->
+</head>
+
+<body>
+    <header>CodeCalculator by J.L</header>
+    <main>
+        <div id="root">
+            <div :class="skeleton.class">
+
+                <div :class="output.class">{{output.value}}</div>
+                <input :class="input.class" @change="returnNumber" @click="emptyInput" @key.down="returnNumber" @keyup.enter="resultF" v-model="input.value" placeholder="Input here">
+                <div :class="commandos.class">
+
+                    <div :class="numbers.class">
+                        <div>
+                            <button @click="addNumToInputF">1</button>
+                            <button @click="addNumToInputF">2</button>
+                            <button @click="addNumToInputF">3</button>
+                        </div>
+                        <div>
+                            <button @click="addNumToInputF">4</button>
+                            <button @click="addNumToInputF">5</button>
+                            <button @click="addNumToInputF">6</button>
+                        </div>
+                        <div>
+                            <button @click="addNumToInputF">7</button>
+                            <button @click="addNumToInputF">8</button>
+                            <button @click="addNumToInputF">9</button>
+                        </div>
+                        <div>
+                            <button @click="addNumToInputF">0</button>
+                        </div>
+                    </div>
+
+                    <div :class="alignOps.class">
+                        <div :class="operands.class">
+                            <div>
+                                <button :class="plus.class" @click="addF"> + </button>
+                                <button :class="minus.class" @click="minusF"> - </button>
+                            </div>
+                            <div>
+                                <button :class="multiply.class" @click="multiplyF"> * </button>
+                                <button :class="divide.class" @click="divideF"> / </button>
+                            </div>
+                        </div>
+                        <div :class="rAndc.class">
+                            <button :class="result.class" @click="resultF"> = </button>
+                            <button :class="clear.class" @click="clearF">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+</body>
+
+</html>
