@@ -201,7 +201,9 @@ let loaded = function () {
                     }
                     this.input.value = "";
                     this.output.value = this.total;
+                    this.prevNumber = 0;
                     this.total = 0;
+                    console.log(this.total);
                 } else {
                     if (this.lastOperand === 1) {
                         this.addF();
@@ -219,9 +221,10 @@ let loaded = function () {
                         this.divideF();
                         this.lastOperand = 0;
                     }
-                    this.output.value = this.total;
-                    this.total = 0;
                     this.input.value = "";
+                    this.output.value = this.total;
+                    this.prevNumber = 0;
+                    this.total = 0;
                 }
             }
         }
